@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizable HTML5 Video, Audio, YouTube and Vimeo player | Dev By Suhag Ahmed</title>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.3/plyr.css" />
+    <style>
+        :root{
+            --plyr-color-main: crimson;
+        }
+        .section-video {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .singleItems{
+            width: 500px !important;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Player <a target="_blank" href="https://github.com/sampotts/plyr">Source code</a></h2>
+    <div class="section-video">
+
+        <div class="singleItems">
+            <video id="player-1"></video>
+        </div>
+
+        <div class="singleItems">
+            <video id="player-2"></video>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.plyr.io/3.7.3/plyr.js"></script>
+    <script>
+        const player = new Plyr('#player-1');
+        player.source = {
+            type: 'video',
+            sources: [
+                {
+                    src: 'rO_Py3Xrhxc',
+                    provider: 'youtube',
+                },
+            ],            
+        };
+        const playerLocal = new Plyr('#player-2');
+        playerLocal.source = {
+            type: 'video',
+            sources: [
+                {
+                    src: 'https://youtu.be/AEOyGw_IdKw',
+                    provider: 'youtube',
+                },
+            ],
+        };
+    </script>
+
+</body>
+
+</html>
